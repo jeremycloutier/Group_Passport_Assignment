@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="bankApp">
+<head>
+    <meta charset="UTF-8">
+    <title>SUCCESS</title>
+    <link rel="stylesheet" href="assets/styles.css">
+    <script src="vendor/angular/angular.min.js"></script>
+    <script src="assets/scripts/client.js"></script>
+</head>
+<body ng-controller="MainController">
+    <h1>Bank Corp. Home Page</h1>
+
+    <h2>User Information</h2>
+
+    <p>Welcome, {{user.first_name}} {{user.last_name}}!</p>
+    <p>Account Balance: {{user.account_balance | currency}}</p>
+    <p>Car Loan: {{user.car_loan | currency}}</p>
+    <p>Home Loan: {{user.home_loan | currency}}</p>
+
+    <h2>Manage Finances</h2>
+
+    <!--<select ng-change="selectLoan()" ng-model="currentLoan">-->
+        <!--<option ng-value="loanType">Car Loan: {{user.car_loan| currency}}</option>-->
+        <!--<option ng-value="loanType">Home Loan: {{user.home_loan | currency}}</option>-->
+    <!--</select>-->
+
+
+    <input type="radio" ng-model="loanType" value="car_loan">Car Loan: {{user.car_loan | currency}}<br>
+    <input type="radio" ng-model="loanType" value="home_loan">Home Loan: {{user.home_loan | currency}}<br>
+    Payment Amount: <input type="number" min=".01" step=".01" ng-model="payment"><br>
+    <input type="submit" ng-click="makePayment()" value="Submit Loan Payment">
+
+
+
+
+    <!--<form action="/" method="post">-->
+        <!--<div>-->
+            <!--<label for="username">Username:</label>-->
+            <!--<input type="text" name="username" id="username"/>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<label for="password">Password:</label>-->
+            <!--<input type="text" name="password" id="password"/>-->
+        <!--</div>-->
+        <!--<div>-->
+            <!--<input type="submit" value="Submit a Loan">-->
+        <!--</div>-->
+    <!--</form>-->
+
+
+</body>
+</html>
